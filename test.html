@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏测试</title>
+    <style>
+        body { margin: 0; background: #0b1526; color: #e8f1ff; }
+        #testCanvas { display: block; margin: 20px auto; border: 2px solid #4a90e2; }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">游戏测试页面</h1>
+    <canvas id="testCanvas" width="400" height="300"></canvas>
+    <script>
+        const canvas = document.getElementById("testCanvas");
+        const ctx = canvas.getContext("2d");
+        
+        console.log("测试页面加载完成");
+        console.log("Canvas:", canvas);
+        console.log("Context:", ctx);
+        
+        // 测试基本绘制
+        ctx.fillStyle = "#0c203a";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.fillStyle = "#a9c6ff";
+        ctx.strokeStyle = "#a9c6ff";
+        ctx.lineWidth = 2;
+        ctx.setLineDash([6, 6]);
+        ctx.beginPath();
+        ctx.moveTo(20, 100);
+        ctx.lineTo(380, 100);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        
+        // 绘制船
+        ctx.fillStyle = "#e6e6e6";
+        ctx.fillRect(150, 80, 70, 16);
+        
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "16px Arial";
+        ctx.fillText("测试绘制正常", 150, 200);
+        
+        console.log("测试绘制完成");
+    </script>
+</body>
+</html>
+

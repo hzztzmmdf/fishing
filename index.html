@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钓鱼小游戏</title>
+    <link rel="stylesheet" href="style.css">qingqing
+</head>
+<body>
+    <div id="hud">
+        <div class="left">
+            <div>关卡: <span id="currentLevel">1</span> / 3</div>
+            <div>目标收益: <span id="targetScore">100</span></div>
+            <div>当前收益: <span id="currentScore">0</span></div>
+            <div>体力: <span id="stamina">9 / 9</span></div>
+        </div>
+        <div class="right">
+            <button id="btnCast" title="空格键">抛线/收线</button>
+            <button id="btnReset">重开</button>
+        </div>
+    </div>
+
+    <!-- 鱼类统计UI -->
+    <div id="fishStats" class="hidden">
+        <div class="stats-title">本局钓获</div>
+        <div id="fishCounts"></div>
+    </div>
+
+    <!-- 关卡介绍面板 -->
+    <div id="levelIntro" class="hidden">
+        <div class="intro-content">
+            <h2>第 <span id="introLevel">1</span> 关</h2>
+            <div class="target-info">
+                <p>目标收益: <span id="introTarget">100</span> 元</p>
+                <p>体力限制: <span id="introStamina">9</span> 次抛竿</p>
+            </div>
+            <div class="fish-info">
+                <h3>鱼类介绍:</h3>
+                <div id="fishTypes"></div>
+            </div>
+            <button id="btnStartLevel">开始钓鱼</button>
+        </div>
+    </div>
+
+    <canvas id="game" width="1280" height="720"></canvas>
+
+    <div id="endPanel" class="hidden">
+        <div id="endText">胜利!</div>
+        <div id="levelComplete" class="hidden">
+            <div>关卡完成！</div>
+            <button id="btnNextLevel">下一关</button>
+        </div>
+        <button id="btnAgain">再来一次</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
+
+
